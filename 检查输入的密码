@@ -1,0 +1,17 @@
+import re
+password = input("Please set you password: ")
+p = re.match("[a-zA-Z0-9]+", password)
+digit = re.search("[0-9]+", password)
+upper = re.search("[A-Z]+", password)
+lower = re.search("[a-z]+", password)
+if p:
+    if len(password) < 10:
+        print("False")
+        print("Please change your password.")
+    elif len(password) <= 64:
+        if digit and upper and lower:
+            print("True")
+        else:
+            print("False")
+            print("Please change your password.")
+                
